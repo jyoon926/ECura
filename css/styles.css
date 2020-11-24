@@ -44,7 +44,7 @@ h1 {
   border: 2px solid #6A62EF;
   color: #6A62EF;
   border-radius: 100%;
-  padding: 20px 34px;
+  padding: 16px 34px;
   -webkit-transition: color .3s, background-color .3s;
   transition: color .3s, background-color .3s;
 }
