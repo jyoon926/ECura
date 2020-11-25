@@ -4,17 +4,19 @@ $(function() {
 
 //Loader
 $(window).load(function() {
-    setTimeout(function(){
-        $('.loader-logo-letter').css("opacity", "0");
-        $('.loader').css("top", "100%");
-        $('.loader').css("pointer-events", "none");
-        //document.getElementsByTagName('html')[0].style.overflowY = "scroll";
-    }, 600);
+    $('.loader').css("top", "100%");
+    $('.loader').css("pointer-events", "none");
+    // setTimeout(function(){
+    //     $('.loader-logo-letter').css("opacity", "0");
+    //     $('.loader').css("top", "100%");
+    //     $('.loader').css("pointer-events", "none");
+    //     //document.getElementsByTagName('html')[0].style.overflowY = "scroll";
+    // }, 600);
 });
 
 document.body.onload = function() {
     setTimeout(function(){
-        $('.loader-logo-letter').css("opacity", ".75");
+        //$('.loader-logo-letter').css("opacity", ".75");
         $('.cover').css("top", "-100%");
     }, 0);
 }
@@ -38,13 +40,14 @@ function scrollFunction() {
 }
 
 jQuery(document).on('click', 'a', function (e) {
+    $('.cover').css("transitionDuration", ".3s");
     $('.cover').css("top", '0');
     e.preventDefault();
     setTimeout(function(){
         if (document.querySelector('body').classList.contains('fade-out')) {
             document.location = e.target.href;
         }
-    }, 750);
+    }, 300);
     document.querySelector('body').classList.add('fade-out');
 });
 
