@@ -4,7 +4,7 @@ $(function() {
 
 //Loader
 $(window).load(function() {
-    $('.loader').css("top", "100%");
+    $('.loader').css("top", "100vh");
     $('.loader').css("pointer-events", "none");
     // setTimeout(function(){
     //     $('.loader-logo-letter').css("opacity", "0");
@@ -15,10 +15,11 @@ $(window).load(function() {
 });
 
 document.body.onload = function() {
-    setTimeout(function(){
-        //$('.loader-logo-letter').css("opacity", ".75");
-        $('.cover').css("top", "-100%");
-    }, 0);
+    $('.cover').css("top", "-100vh");
+    // setTimeout(function(){
+    //     $('.loader-logo-letter').css("opacity", ".75");
+    //     $('.cover').css("top", "-100vh");
+    // }, 0);
 }
 
 $('.scroll').scroll(function() {
