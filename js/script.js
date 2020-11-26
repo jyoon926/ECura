@@ -5,10 +5,10 @@ $(function() {
 //Loader
 document.body.onload = function() {
     setTimeout(function(){
-        $('.cover').css("top", "-100vh");
-        $('.loader').css("top", "100vh");
+        $('.cover').css("opacity", "0");
+        $('.loader').css("opacity", "0");
         $('.loader').css("pointer-events", "none");
-    }, 300);
+    }, 200);
     // setTimeout(function(){
     //     $('.loader-logo-letter').css("opacity", ".75");
     //     $('.cover').css("top", "-100vh");
@@ -46,7 +46,7 @@ function scrollFunction() {
 
 jQuery(document).on('click', 'a', function (e) {
     $('.cover').css("transitionDuration", ".5s");
-    $('.cover').css("top", '0');
+    $('.cover').css("opacity", '100');
     e.preventDefault();
     setTimeout(function(){
         if (document.querySelector('body').classList.contains('fade-out')) {

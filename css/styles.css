@@ -124,6 +124,7 @@ h1 {
           transition-duration: 0;
   -webkit-transition-timing-function: ease;
           transition-timing-function: ease;
+  pointer-events: none;
 }
 
 .menu-bg-desktop {
@@ -499,12 +500,22 @@ h1 {
   border-bottom: 2px solid rgba(106, 98, 239, 0.2);
   padding-bottom: 2px;
   padding-top: 4px;
+  -webkit-transition-duration: .3s;
+          transition-duration: .3s;
+  -webkit-transform: translateY(40px);
+          transform: translateY(40px);
+  opacity: 0;
 }
 
 .nav-mobile .nav-links .inner .b {
   color: #6A62EF;
   margin-top: 1em;
   margin-bottom: .5em;
+  -webkit-transition-duration: .3s;
+          transition-duration: .3s;
+  -webkit-transform: translateY(40px);
+          transform: translateY(40px);
+  opacity: 0;
 }
 
 .nav-mobile .nav-links .inner .i {
@@ -522,6 +533,77 @@ h1 {
 .nav-mobile #menu-checkbox:checked ~ .nav-links {
   opacity: 1;
   pointer-events: all;
+}
+
+.nav-mobile #menu-checkbox:checked ~ .nav-links .inner *:nth-child(1) {
+  -webkit-transition-delay: .025s;
+          transition-delay: .025s;
+}
+
+.nav-mobile #menu-checkbox:checked ~ .nav-links .inner *:nth-child(2) {
+  -webkit-transition-delay: .05s;
+          transition-delay: .05s;
+}
+
+.nav-mobile #menu-checkbox:checked ~ .nav-links .inner *:nth-child(3) {
+  -webkit-transition-delay: .075s;
+          transition-delay: .075s;
+}
+
+.nav-mobile #menu-checkbox:checked ~ .nav-links .inner *:nth-child(4) {
+  -webkit-transition-delay: .1s;
+          transition-delay: .1s;
+}
+
+.nav-mobile #menu-checkbox:checked ~ .nav-links .inner *:nth-child(5) {
+  -webkit-transition-delay: .125s;
+          transition-delay: .125s;
+}
+
+.nav-mobile #menu-checkbox:checked ~ .nav-links .inner *:nth-child(6) {
+  -webkit-transition-delay: .15s;
+          transition-delay: .15s;
+}
+
+.nav-mobile #menu-checkbox:checked ~ .nav-links .inner *:nth-child(7) {
+  -webkit-transition-delay: .175s;
+          transition-delay: .175s;
+}
+
+.nav-mobile #menu-checkbox:checked ~ .nav-links .inner *:nth-child(8) {
+  -webkit-transition-delay: .2s;
+          transition-delay: .2s;
+}
+
+.nav-mobile #menu-checkbox:checked ~ .nav-links .inner *:nth-child(9) {
+  -webkit-transition-delay: .225s;
+          transition-delay: .225s;
+}
+
+.nav-mobile #menu-checkbox:checked ~ .nav-links .inner *:nth-child(10) {
+  -webkit-transition-delay: .25s;
+          transition-delay: .25s;
+}
+
+.nav-mobile #menu-checkbox:checked ~ .nav-links .inner *:nth-child(11) {
+  -webkit-transition-delay: .275s;
+          transition-delay: .275s;
+}
+
+.nav-mobile #menu-checkbox:checked ~ .nav-links .inner *:nth-child(12) {
+  -webkit-transition-delay: .3s;
+          transition-delay: .3s;
+}
+
+.nav-mobile #menu-checkbox:checked ~ .nav-links .inner *:nth-child(13) {
+  -webkit-transition-delay: .325s;
+          transition-delay: .325s;
+}
+
+.nav-mobile #menu-checkbox:checked ~ .nav-links .inner a, .nav-mobile #menu-checkbox:checked ~ .nav-links p {
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  opacity: 1;
 }
 
 .nav-mobile #menu-checkbox:checked ~ .menu-button .line {
@@ -634,8 +716,8 @@ h1 {
   height: calc(100% + 150px);
   z-index: -1;
   background-image: url("../img/colors.jpg");
-  -webkit-filter: blur(40px) opacity(0.2) hue-rotate(-20deg);
-          filter: blur(40px) opacity(0.2) hue-rotate(-20deg);
+  -webkit-filter: blur(1vw) opacity(0.3) hue-rotate(-20deg);
+          filter: blur(1vw) opacity(0.3) hue-rotate(-20deg);
 }
 
 @media screen and (max-width: 1000px) {

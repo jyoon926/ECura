@@ -19,8 +19,6 @@ body {
     overflow: hidden;
 }
 
-
-
 p, a {
     font-size: 1em;
 }
@@ -90,6 +88,7 @@ h1 {
     z-index: 19;
     transition-duration: 0;
     transition-timing-function: ease;
+    pointer-events: none;
 }
 
 .menu-bg-desktop {
@@ -323,6 +322,9 @@ h1 {
                 border-bottom: 2px solid rgba(red($accent-1),green($accent-1),blue($accent-1),0.2);
                 padding-bottom: 2px;
                 padding-top: 4px;
+                transition-duration: .3s;
+                transform: translateY(40px);
+                opacity: 0;
             }
             .h {
             }
@@ -330,6 +332,9 @@ h1 {
                 color: $accent-1;
                 margin-top: 1em;
                 margin-bottom: .5em;
+                transition-duration: .3s;
+                transform: translateY(40px);
+                opacity: 0;
             }
             .i {
                 margin-left: 1em;
@@ -345,6 +350,23 @@ h1 {
     #menu-checkbox:checked ~ .nav-links {
         opacity: 1;
         pointer-events: all;
+        .inner *:nth-child(1) {transition-delay: .025s;}
+        .inner *:nth-child(2) {transition-delay: .05s;}
+        .inner *:nth-child(3) {transition-delay: .075s;}
+        .inner *:nth-child(4) {transition-delay: .1s;}
+        .inner *:nth-child(5) {transition-delay: .125s;}
+        .inner *:nth-child(6) {transition-delay: .15s;}
+        .inner *:nth-child(7) {transition-delay: .175s;}
+        .inner *:nth-child(8) {transition-delay: .2s;}
+        .inner *:nth-child(9) {transition-delay: .225s;}
+        .inner *:nth-child(10) {transition-delay: .25s;}
+        .inner *:nth-child(11) {transition-delay: .275s;}
+        .inner *:nth-child(12) {transition-delay: .3s;}
+        .inner *:nth-child(13) {transition-delay: .325s;}
+        .inner a, p {
+            transform: translateY(0px);
+            opacity: 1;
+        }
     }
     #menu-checkbox:checked ~ .menu-button {
         .line {
@@ -423,7 +445,7 @@ h1 {
     height: calc(100% + 150px);
     z-index: -1;
     background-image: url('../img/colors.jpg');
-    filter: blur(40px) opacity(.2) hue-rotate(-20deg);
+    filter: blur(1vw) opacity(.3) hue-rotate(-20deg);
 }
 @media screen and (max-width: 1000px) {
     h4 {
