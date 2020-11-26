@@ -4,8 +4,8 @@ $(function() {
 
 //Loader
 document.body.onload = function() {
-    $('.cover').css("top", "-100vh");
     setTimeout(function(){
+        $('.cover').css("top", "-100vh");
         $('.loader').css("top", "100vh");
         $('.loader').css("pointer-events", "none");
     }, 300);
