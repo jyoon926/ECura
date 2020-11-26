@@ -3,7 +3,19 @@ $(function() {
 });
 
 //Loader
-$(window).load(function() {
+document.body.onload = function() {
+    $('.cover').css("top", "-100vh");
+    setTimeout(function(){
+        $('.loader').css("top", "100vh");
+        $('.loader').css("pointer-events", "none");
+    }, 300);
+    // setTimeout(function(){
+    //     $('.loader-logo-letter').css("opacity", ".75");
+    //     $('.cover').css("top", "-100vh");
+    // }, 0);
+}
+
+/*$(window).load(function() {
     $('.loader').css("top", "100vh");
     $('.loader').css("pointer-events", "none");
     // setTimeout(function(){
@@ -12,15 +24,7 @@ $(window).load(function() {
     //     $('.loader').css("pointer-events", "none");
     //     //document.getElementsByTagName('html')[0].style.overflowY = "scroll";
     // }, 600);
-});
-
-document.body.onload = function() {
-    $('.cover').css("top", "-100vh");
-    // setTimeout(function(){
-    //     $('.loader-logo-letter').css("opacity", ".75");
-    //     $('.cover').css("top", "-100vh");
-    // }, 0);
-}
+});*/
 
 $('.scroll').scroll(function() {
     scrollFunction()
@@ -41,30 +45,13 @@ function scrollFunction() {
 }
 
 jQuery(document).on('click', 'a', function (e) {
-    $('.cover').css("transitionDuration", ".3s");
+    $('.cover').css("transitionDuration", ".5s");
     $('.cover').css("top", '0');
     e.preventDefault();
     setTimeout(function(){
         if (document.querySelector('body').classList.contains('fade-out')) {
             document.location = e.target.href;
         }
-    }, 300);
+    }, 550);
     document.querySelector('body').classList.add('fade-out');
 });
-
-// let links = document.querySelectorAll('a');
-// if (links) {
-//     links.forEach (link => {
-//         link.onclick = e => {
-//             $('.cover').css("top", '0');
-//             let body = document.querySelector('body');
-//             e.preventDefault();
-//             setTimeout(function(){
-//                 if (body.classList.contains('fade-out')) {
-//                     window.location = e.srcElement.href;
-//                 }
-//             }, 750);
-//             body.classList.add('fade-out');
-//         }
-//     });
-// }

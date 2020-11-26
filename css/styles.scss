@@ -34,7 +34,7 @@ h2 {
     font-size: 4em;
 }
 h1 {
-    font-size: 8em;
+    font-size: 5em;
 }
 .button {
     border: 2px solid $accent-1;
@@ -58,7 +58,7 @@ h1 {
     background: $accent-1;
     height: 100%; width: 100%;
     z-index: 20;
-    transition-duration: .3s;
+    transition-duration: .5s;
     transition-timing-function: ease;
     //transition-delay: .75s;
     p {
@@ -143,9 +143,83 @@ h1 {
         position: absolute;
         left: calc(50% - 336.84px / 2);
         a {
-            transition: color .3s;
+            transition-duration: .4s;
+            border-bottom: 2px solid rgba(red($accent-1),green($accent-1),blue($accent-1),0);
+            padding: 4px 0 2px 0;
+            text-align: center;
             &:hover {
                 color: $accent-1;
+                border-bottom: 2px solid rgba(red($accent-1),green($accent-1),blue($accent-1),0.2);
+            }
+        }
+        .menu-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            .link {
+                pointer-events: all;
+            }
+            .submenu {
+                opacity: 0;
+                pointer-events: none;
+                position: absolute;
+                transition-duration: .3s;
+                margin-top: 27px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                .triangle {
+                    height: 16px; width: 16px;
+                    background: $light;
+                    box-shadow: 0 5px 14px -4px rgba(13,23,75,.5);
+                    margin-top: 1em;
+                    transform: rotate(45deg);
+                    margin-bottom: -10px;
+                }
+                .inner {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: center;
+                    gap: 6px;
+                    background: $light;
+                    padding: 1.25em;
+                    border-radius: .6em;
+                    z-index: 11;
+                    box-shadow: 0 5px 14px -4px rgba(13,23,75,.5);
+                    a {
+                        all: unset;
+                        text-align: center;
+                        transition-duration: .4s;
+                        transition-delay: 0;
+                        padding: 8px;
+                        border-radius: .3em;
+                        width: 120px;
+                        &:hover {
+                            cursor: pointer;
+                            background: rgba(red($accent-1),green($accent-1),blue($accent-1),0.1);
+                        }
+                    }
+                }
+            }
+            .link {
+                transition-duration: .4s;
+                border-bottom: 2px solid rgba(red($accent-1),green($accent-1),blue($accent-1),0);
+                padding: 4px 0 2px 0;
+                text-align: center;
+                &:hover {
+                    color: $accent-1;
+                    border-bottom: 2px solid rgba(red($accent-1),green($accent-1),blue($accent-1),0.2);
+                }
+                &:hover, &:link, &:active, &:visited {
+                    cursor: default;
+                }
+            }
+            .link:hover ~ .submenu, .submenu:hover {
+                opacity: 1;
+                pointer-events: all;
             }
         }
     }
@@ -157,9 +231,12 @@ h1 {
         gap: 40px;
         margin-right: 40px;
         .sign-in {
-            transition: color .3s;
+            transition-duration: .4s;
+            border-bottom: 2px solid rgba(0,0,0,0);
+            padding: 4px 0 2px 0;
             &:hover {
                 color: $accent-1;
+                border-bottom: 2px solid rgba(0,0,0,0.2);
             }
         }
     }
@@ -187,7 +264,7 @@ h1 {
             height: 2px;
             width: 30px;
             background-color: $dark;
-            transition-duration: .3s;
+            transition-duration: .6s;
         }
         .top {
             margin-bottom: 12px;
@@ -224,29 +301,45 @@ h1 {
         z-index: 11;
         width: 100vw;
         height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
         background: $light;
         box-sizing: border-box;
         padding: 40px 20px;
         opacity: 0;
         transition: opacity .3s;
         pointer-events: none;
-        * {
-            font-size: 2.5em;
-            line-height: 1.1;
-            margin-bottom: .25em;
-        }
-        .home {
-            margin-bottom: 1em;
-        }
-        .sign-in {
-            margin-top: 1em;
-        }
-        .get-started {
-            color: $accent-1;
+        overflow-y: scroll;
+        .inner {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            height: auto;
+            * {
+                font-size: 1.5em;
+                line-height: 1.1;
+                margin-bottom: .25em;
+            }
+            a {
+                border-bottom: 2px solid rgba(red($accent-1),green($accent-1),blue($accent-1),0.2);
+                padding-bottom: 2px;
+                padding-top: 4px;
+            }
+            .h {
+            }
+            .b {
+                color: $accent-1;
+                margin-top: 1em;
+                margin-bottom: .5em;
+            }
+            .i {
+                margin-left: 1em;
+            }
+            .sign-in {
+                margin-top: 1em;
+            }
+            .get-started {
+                color: $accent-1;
+            }
         }
     }
     #menu-checkbox:checked ~ .nav-links {
@@ -280,26 +373,27 @@ h1 {
     overflow-y: scroll;
 }
 .home, .about {
-    background: $light;
 }
 .hero {
-    height: 100vh;
     width: 100%;
     box-sizing: border-box;
     padding: 160px 40px 80px 40px;
-    background: radial-gradient(ellipse at bottom right, $accent-2, transparent);
+    //background: radial-gradient(ellipse at bottom right, $accent-2, transparent);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
     .text {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        align-items: flex-start;
+        align-items: center;
         gap: 40px;
-        h2 {
-            max-width: 1000px;
+        * {
+            text-align: center;
+        }
+        h1 {
+            max-width: 1100px;
             b {
                 color: $accent-1;
             }
@@ -322,7 +416,16 @@ h1 {
     }
 }
 
-@media screen and (max-width: 1100px) {
+.bg {
+    position: fixed;
+    top: -75px; left: -75px;
+    width: calc(100% + 150px);
+    height: calc(100% + 150px);
+    z-index: -1;
+    background-image: url('../img/colors.jpg');
+    filter: blur(40px) opacity(.2) hue-rotate(-20deg);
+}
+@media screen and (max-width: 1000px) {
     h4 {
         font-size: 1.25em;
     }
@@ -333,7 +436,7 @@ h1 {
         font-size: 4em;
     }
     h1 {
-        font-size: 8em;
+        font-size: 4em;
     }
     .menu-bg-desktop {
         opacity: 0;
@@ -357,9 +460,6 @@ h1 {
     .hero {
         padding: 160px 20px 80px 20px;
         line-height: 1.1;
-        height: auto;
-        min-height: 100vh;
-        justify-content: flex-end;
     }
     .section {
         padding: 80px 20px;
@@ -377,6 +477,6 @@ h1 {
         font-size: 12vw;
     }
     h1 {
-        font-size: 24vw;
+        font-size: 12vw;
     }
 }
