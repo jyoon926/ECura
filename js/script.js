@@ -90,9 +90,15 @@ $('#thumb').mousedown(function(e){
     topPos = $('#scroll-container').scrollTop();
     thumb.style.backgroundColor = 'rgba(106, 98, 239, 1)';
 });
+$('#thumb').mouseover(function(e){
+    thumb.style.backgroundColor = 'rgba(106, 98, 239, 1)';
+});
+$('#thumb').mouseout(function(e){
+    thumb.style.backgroundColor = 'rgba(106, 98, 239, 0.5)';
+});
 $('body').mouseup(function(){
     move = false;
-    thumb.style.backgroundColor = 'rgba(106, 98, 239, 0.4)';
+    thumb.style.backgroundColor = 'rgba(106, 98, 239, 0.5)';
 });
 window.onmousemove = function(e){
     if (move) {
@@ -102,19 +108,3 @@ window.onmousemove = function(e){
         content.scrollTop = topPos + scrollHeight;
     }
 }
-function addEvent(obj, evt, fn) {
-    if (obj.addEventListener) {
-        obj.addEventListener(evt, fn, false);
-    }
-    else if (obj.attachEvent) {
-        obj.attachEvent("on" + evt, fn);
-    }
-}
-addEvent(document, "mouseout", function(e) {
-    e = e ? e : window.event;
-    var from = e.relatedTarget || e.toElement;
-    if (!from || from.nodeName == "HTML") {
-        move = false;
-        thumb.style.backgroundColor = 'rgba(106, 98, 239, 0.4)';
-    }
-});

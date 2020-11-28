@@ -657,14 +657,13 @@ h1 {
   width: 8px;
   height: 100px;
   border-radius: 4px;
-  background-color: rgba(106, 98, 239, 0.4);
+  background-color: rgba(106, 98, 239, 0.5);
   -webkit-transition: background-color .3s;
   transition: background-color .3s;
 }
 
 #scrollbar #thumb:hover {
   cursor: pointer;
-  background-color: #6a62ef;
 }
 
 #scrollbar:hover #thumb {
@@ -744,7 +743,7 @@ h1 {
   width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 160px 40px;
+  padding: 80px 40px 160px 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -812,7 +811,7 @@ h1 {
     line-height: 1.1;
   }
   .section {
-    padding: 80px 20px;
+    padding: 40px 20px 80px 20px;
     gap: 20px;
   }
 }
