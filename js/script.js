@@ -79,26 +79,28 @@ const scroll = document.getElementById('scroll');
 const anchor = document.getElementById('anchor');
 const scrollbar = document.getElementById('scrollbar');
 const thumb = document.getElementById('thumb');
+const inside = document.getElementById('inside');
 let y = 0;
 let start = 0;
 let move = false;
 let topPos = 1;
-
+dark = 'rgba(106, 98, 239, 1)';
+light = 'rgba(106, 98, 239, 0.4)';
 $('#thumb').mousedown(function(e){
     move = true;
     y = e.clientY;
     topPos = $('#scroll-container').scrollTop();
-    thumb.style.backgroundColor = 'rgba(106, 98, 239, 1)';
+    inside.style.backgroundColor = dark;
 });
 $('#thumb').mouseover(function(e){
-    thumb.style.backgroundColor = 'rgba(106, 98, 239, 1)';
+    inside.style.backgroundColor = dark;
 });
 $('#thumb').mouseout(function(e){
-    thumb.style.backgroundColor = 'rgba(106, 98, 239, 0.5)';
+    inside.style.backgroundColor = light;
 });
 $('body').mouseup(function(){
     move = false;
-    thumb.style.backgroundColor = 'rgba(106, 98, 239, 0.5)';
+    inside.style.backgroundColor = light;
 });
 window.onmousemove = function(e){
     if (move) {
@@ -106,5 +108,6 @@ window.onmousemove = function(e){
         dy = e.clientY - y;
         scrollHeight = (dy / space) * (scroll.offsetHeight - window.innerHeight);
         content.scrollTop = topPos + scrollHeight;
+        inside.style.backgroundColor = dark;
     }
 }
