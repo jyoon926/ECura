@@ -23,15 +23,15 @@ $('.scroll').scroll(function() {
 //Hiding header
 function scrollFunction() {
     if ($('.scroll').scrollTop() > 20) {
-        $('.menu-bg-desktop').css("top", "0");
-        $('.menu-bg-mobile').css("top", "0");
-        $('.nav-bar').css("height", '60px');
-        $('.menu-button').css("top", '10px');
+        //$('.menu-bg-desktop').css("top", "0");
+        //$('.menu-bg-mobile').css("top", "0");
+        //$('.nav-bar').css("height", '60px');
+        //$('.menu-button').css("top", '10px');
     } else {
-        $('.menu-bg-desktop').css("top", "-80px");
-        $('.menu-bg-mobile').css("top", "-60px");
-        $('.nav-bar').css("height", '80px');
-        $('.menu-button').css("top", '20px');
+        //$('.menu-bg-desktop').css("top", "-80px");
+        //$('.menu-bg-mobile').css("top", "-60px");
+        //$('.nav-bar').css("height", '80px');
+        //$('.menu-button').css("top", '20px');
     }
 }
 
@@ -84,8 +84,8 @@ let y = 0;
 let start = 0;
 let move = false;
 let topPos = 1;
-dark = 'rgba(106, 98, 239, 1)';
-light = 'rgba(106, 98, 239, 0.4)';
+dark = 'rgba(0, 0, 0, 1)';
+light = 'rgba(0, 0, 0, 0.4)';
 $('#thumb').mousedown(function(e){
     move = true;
     y = e.clientY;

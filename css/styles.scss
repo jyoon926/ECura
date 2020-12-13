@@ -41,11 +41,18 @@ h1 {
     border: 2px solid $accent-1;
     color: $accent-1;
     border-radius: 100%;
-    padding: 16px 34px;
-    transition: color .3s, background-color .3s;
+    padding: 25px 50px;
+    transition: .6s;
+    p {
+        transition: .6s;
+    }
     &:hover {
-        color: $light;
-        background-color: $accent-1;
+        transform: rotate(6deg);
+        p {
+            transform: rotate(-6deg);
+        }
+        //color: $light;
+        //background-color: $accent-1;
     }
 }
 
@@ -56,7 +63,7 @@ h1 {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background: $accent-1;
+    background: $dark;
     height: 100%; width: 100%;
     z-index: 20;
     transition-duration: .5s;
@@ -85,7 +92,7 @@ h1 {
     position: fixed;
     width: 100%;
     height: 100%;
-    background: $accent-1;
+    background: $dark;
     top: 0;
     left: 0;
     z-index: 19;
@@ -121,18 +128,23 @@ h1 {
     height: 80px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     transition: background-color .3s;
+    background-color: white;
+    border-bottom: 1px solid $dark;
+    font-size: 1.5em;
     .logo-container {
+        position: absolute;
+        left: 0;
         margin-left: 40px;
         .logo {
             font-size: 2em;
-            color: $accent-1;
+            color: $dark;
             font-weight: 500;
             transition: color .3s;
             &:hover {
-                color: $accent-1;
+                color: $dark;
             }
         }
     }
@@ -142,16 +154,21 @@ h1 {
         justify-content: center;
         align-items: center;
         gap: 40px;
-        position: absolute;
+        height: 80px;
+        padding-right: 40px;
+        //position: absolute;
+        border-right: 1px solid $dark;
         left: calc(50% - 336.84px / 2);
         a {
             transition-duration: .4s;
-            border-bottom: 2px solid rgba(red($accent-1),green($accent-1),blue($accent-1),0);
+            //border-bottom: 2px solid rgba(red($accent-1),green($accent-1),blue($accent-1),0);
+            border-bottom: 2px solid rgba(0,0,0,0);
             padding: 4px 0 2px 0;
             text-align: center;
             &:hover {
                 color: $accent-1;
-                border-bottom: 2px solid rgba(red($accent-1),green($accent-1),blue($accent-1),0.2);
+                //border-bottom: 2px solid rgba(red($accent-1),green($accent-1),blue($accent-1),0.2);
+                border-bottom: 2px solid rgba(0,0,0,0.2);
             }
         }
         .menu-item {
@@ -167,7 +184,7 @@ h1 {
                 pointer-events: none;
                 position: absolute;
                 transition-duration: .3s;
-                margin-top: 27px;
+                margin-top: 37px;
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-start;
@@ -187,7 +204,7 @@ h1 {
                     align-items: center;
                     gap: 6px;
                     background: $light;
-                    padding: 1.25em;
+                    padding: 1em;
                     border-radius: .6em;
                     z-index: 11;
                     box-shadow: 0 5px 14px -4px rgba(13,23,75,.5);
@@ -198,22 +215,23 @@ h1 {
                         transition-delay: 0;
                         padding: 8px;
                         border-radius: .3em;
-                        width: 120px;
+                        width: 140px;
+                        font-size: 0.75em;
                         &:hover {
                             cursor: pointer;
-                            background: rgba(red($accent-1),green($accent-1),blue($accent-1),0.1);
+                            background: rgba(0,0,0,0.1);
                         }
                     }
                 }
             }
             .link {
                 transition-duration: .4s;
-                border-bottom: 2px solid rgba(red($accent-1),green($accent-1),blue($accent-1),0);
+                border-bottom: 2px solid rgba(0,0,0,0);
                 padding: 4px 0 2px 0;
                 text-align: center;
                 &:hover {
-                    color: $accent-1;
-                    border-bottom: 2px solid rgba(red($accent-1),green($accent-1),blue($accent-1),0.2);
+                    color: $dark;
+                    border-bottom: 2px solid rgba(0,0,0,0.2);
                 }
                 &:hover, &:link, &:active, &:visited {
                     cursor: default;
@@ -224,8 +242,8 @@ h1 {
                 pointer-events: all;
             }
             .submenu:hover ~ p {
-                color: $accent-1;
-                border-bottom: 2px solid rgba(red($accent-1),green($accent-1),blue($accent-1),0.2);
+                color: $dark;
+                border-bottom: 2px solid rgba(0,0,0,0.2);
             }
         }
     }
@@ -236,12 +254,13 @@ h1 {
         align-items: center;
         gap: 40px;
         margin-right: 40px;
-        .sign-in {
+        padding-left: 40px;
+        a {
             transition-duration: .4s;
             border-bottom: 2px solid rgba(0,0,0,0);
             padding: 4px 0 2px 0;
             &:hover {
-                color: $accent-1;
+                color: $dark;
                 border-bottom: 2px solid rgba(0,0,0,0.2);
             }
         }
@@ -255,7 +274,7 @@ h1 {
     }
     label {
         position: fixed;
-        top: 20px;
+        top: 10px;
         right: 15px;
         padding: 5px;
         height: 30px;
@@ -287,7 +306,7 @@ h1 {
         top: 0; left: 0;
         z-index: 10;
         width: 100%;
-        height: 80px;
+        height: 60px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -296,8 +315,10 @@ h1 {
         box-sizing: border-box;
         padding: 0 20px;
         transition: height .3s;
+        background-color: $light;
+        border-bottom: 1px solid $dark;
         .logo {
-            font-size: 1.5em;
+            font-size: 2em;
             color: $accent-1;
         }
     }
@@ -404,14 +425,14 @@ h1 {
         user-select: none;
         width: 8px;
         height: 100px;
-        background-color: rgba(106, 98, 239, 0);
+        background-color: rgba(0, 0, 0, 0);
         padding: 4px;
         #inside {
             border-radius: 4px;
             width: 100%;
             height: 100%;
             transition: background-color .3s;
-            background-color: rgba(106, 98, 239, 0.4);
+            background-color: rgba(0, 0, 0, 0.4);
         }
         &:hover {
             cursor: pointer;
@@ -422,7 +443,7 @@ h1 {
     }
 }
 #scrollbar-focus {
-    background-color: #6A62EF;
+    background-color: #000;
 }
 
 .home, .about, .content, .content {
@@ -440,7 +461,9 @@ h1 {
 .hero {
     width: 100%;
     box-sizing: border-box;
-    padding: 160px 40px 80px 40px;
+    padding-top: 80px;
+    height: 100vh;
+    //padding: 160px 40px 80px 40px;
     //background: radial-gradient(ellipse at bottom right, $accent-2, transparent);
     display: flex;
     flex-direction: column;
@@ -448,21 +471,37 @@ h1 {
     align-items: center;
     .text {
         display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        gap: 40px;
-        * {
-            text-align: center;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+        .black {
+            background-image: url('../img/unsplash.jpg');
+            background-size: cover;
+            background-position: center center;
+            filter: saturate(0);
         }
-        h1 {
-            max-width: 1100px;
-            b {
-                color: $accent-1;
+        .half {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 40px;
+            padding: 40px;
+            box-sizing: border-box;
+            * {
+                text-align: left;
             }
-        }
-        h3 {
-            max-width: 600px;
+            h2 {
+                max-width: 1100px;
+                b {
+                    color: $accent-1;
+                }
+            }
+            h4 {
+                max-width: 600px;
+            }
         }
     }
 }
@@ -476,6 +515,7 @@ h1 {
     gap: 40px;
     img {
         width: 100%;
+        filter: saturate(0);
     }
 }
 
@@ -485,10 +525,10 @@ h1 {
     width: calc(100% + 150px);
     height: calc(100% + 150px);
     z-index: -1;
-    background-image: url('../img/colors.jpg');
+    //background-image: url('../img/colors.jpg');
     filter: blur(1vw) opacity(.3) hue-rotate(-20deg);
 }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1140px) {
     h4 {
         font-size: 1.25em;
     }
@@ -521,17 +561,28 @@ h1 {
         display: flex;
     }
     .hero {
-        padding: 160px 20px 80px 20px;
+        //padding: 160px 20px 80px 20px;
         line-height: 1.1;
+        .text {
+            flex-direction: column-reverse;
+            .half {
+                width: 100%;
+                height: auto;
+                padding: 20px 20px 60px 20px;
+            }
+            .black {
+                height: 300px;
+            }
+        }
     }
     .section {
-        padding: 40px 20px 80px 20px;
+        padding: 60px 20px 80px 20px;
         gap: 20px;
     }
 }
 @media screen and (max-width: 500px) {
     h4 {
-        font-size: 4em;
+        font-size: 1.25em;
     }
     h3 {
         font-size: 6vw;
