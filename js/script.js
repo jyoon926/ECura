@@ -11,9 +11,15 @@ document.body.onload = function() {
 }
 $(window).load(function() {
     setTimeout(function(){
-        $('.loader').css("opacity", "0");
-        $('.loader').css("pointer-events", "none");
-    }, 200);
+        $('.loader-logo').css("opacity", "1");
+        setTimeout(function(){
+            $('.loader-logo').css("opacity", "0");
+            setTimeout(function(){
+                $('.loader').css("opacity", "0");
+                $('.loader').css("pointer-events", "none");
+            }, 500);
+        }, 1000);
+    }, 500);
 });
 $('.scroll').scroll(function() {
     scrollFunction();
