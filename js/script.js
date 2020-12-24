@@ -91,7 +91,7 @@ let start = 0;
 let move = false;
 let topPos = 1;
 dark = 'rgba(0, 0, 0, 1)';
-light = 'rgba(0, 0, 0, 0.4)';
+light = 'rgba(0, 0, 0, 0.25)';
 $('#thumb').mousedown(function(e){
     move = true;
     y = e.clientY;

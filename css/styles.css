@@ -2,11 +2,12 @@
   font-family: "Good Sans";
   margin: 0;
   padding: 0;
-  color: #000;
+  color: #184c5f;
   -moz-user-select: none;
   /* mozilla browsers */
   -khtml-user-select: none;
   font-weight: 400;
+  scrollbar-width: none;
 }
 
 * a {
@@ -20,6 +21,7 @@
 html {
   overflow: hidden;
   font-size: 16px;
+  background-color: #f9f3f1;
 }
 
 body {
@@ -28,6 +30,11 @@ body {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  background-color: #f9f3f1;
+}
+
+-webkit-scrollbar {
+  display: none;
 }
 
 p, a {
@@ -47,12 +54,12 @@ h2 {
 }
 
 h1 {
-  font-size: 5em;
+  font-size: 7em;
 }
 
 .button {
-  border: 1px solid #000;
-  color: #000;
+  border: 1px solid #dc4f0f;
+  color: #dc4f0f;
   border-radius: 100%;
   padding: 25px 50px;
   -webkit-transition: .6s;
@@ -91,10 +98,10 @@ h1 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #000;
+  background: #184c5f;
   height: 100%;
   width: 100%;
-  z-index: 20;
+  z-index: 40;
   -webkit-transition-duration: 1s;
           transition-duration: 1s;
   -webkit-transition-timing-function: ease;
@@ -113,7 +120,7 @@ h1 {
   position: fixed;
   width: 100%;
   height: 100%;
-  background: #000;
+  background: #184c5f;
   top: 0;
   left: 0;
   z-index: 19;
@@ -152,7 +159,7 @@ h1 {
   z-index: 9;
   width: 100%;
   height: 80px;
-  background-color: #fff;
+  background-color: #f9f3f1;
   -webkit-transition: top .3s;
   transition: top .3s;
 }
@@ -164,7 +171,7 @@ h1 {
   z-index: 9;
   width: 100%;
   height: 60px;
-  background-color: #fff;
+  background-color: #f9f3f1;
   -webkit-transition: top .3s;
   transition: top .3s;
   opacity: 0;
@@ -192,8 +199,8 @@ h1 {
           align-items: center;
   -webkit-transition: background-color .3s;
   transition: background-color .3s;
-  background-color: white;
-  border-bottom: 1px solid #000;
+  background-color: #f9f3f1;
+  border-bottom: 1px solid #184c5f;
   font-size: 1.5em;
 }
 
@@ -205,14 +212,13 @@ h1 {
 
 .nav-desktop .logo-container .logo {
   font-size: 2em;
-  color: #000;
   font-weight: 500;
   -webkit-transition: color .3s;
   transition: color .3s;
 }
 
 .nav-desktop .logo-container .logo:hover {
-  color: #000;
+  color: #184c5f;
 }
 
 .nav-desktop .menu-container {
@@ -232,7 +238,7 @@ h1 {
   gap: 40px;
   height: 80px;
   padding-right: 40px;
-  border-right: 1px solid #000;
+  border-right: 1px solid #184c5f;
   left: calc(50% - 336.84px / 2);
 }
 
@@ -245,7 +251,7 @@ h1 {
 }
 
 .nav-desktop .menu-container a:hover {
-  color: #000;
+  color: #dc4f0f;
   border-bottom: 2px solid rgba(0, 0, 0, 0.2);
 }
 
@@ -267,6 +273,7 @@ h1 {
 
 .nav-desktop .menu-container .menu-item .link {
   pointer-events: all;
+  z-index: 1;
 }
 
 .nav-desktop .menu-container .menu-item .submenu {
@@ -275,7 +282,7 @@ h1 {
   position: absolute;
   -webkit-transition-duration: .3s;
           transition-duration: .3s;
-  margin-top: 37px;
+  margin-top: 28px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -307,7 +314,7 @@ h1 {
       -ms-flex-align: center;
           align-items: center;
   gap: 6px;
-  background: #fff;
+  background: #f9f3f1;
   padding: 1em;
   z-index: 11;
   -webkit-box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.5);
@@ -341,7 +348,7 @@ h1 {
 }
 
 .nav-desktop .menu-container .menu-item .link:hover {
-  color: #000;
+  color: #184c5f;
   border-bottom: 2px solid rgba(0, 0, 0, 0.2);
 }
 
@@ -351,11 +358,12 @@ h1 {
 
 .nav-desktop .menu-container .menu-item .link:hover ~ .submenu, .nav-desktop .menu-container .menu-item .submenu:hover {
   opacity: 1;
+  margin-top: 37px;
   pointer-events: all;
 }
 
 .nav-desktop .menu-container .menu-item .submenu:hover ~ p {
-  color: #000;
+  color: #184c5f;
   border-bottom: 2px solid rgba(0, 0, 0, 0.2);
 }
 
@@ -386,7 +394,7 @@ h1 {
 }
 
 .nav-desktop .account-container a:hover {
-  color: #000;
+  color: #184c5f;
   border-bottom: 2px solid rgba(0, 0, 0, 0.2);
 }
 
@@ -424,7 +432,7 @@ h1 {
   position: absolute;
   height: 2px;
   width: 30px;
-  background-color: #000;
+  background-color: #184c5f;
   -webkit-transition-duration: .6s;
           transition-duration: .6s;
 }
@@ -468,13 +476,12 @@ h1 {
   padding: 0 20px;
   -webkit-transition: height .3s;
   transition: height .3s;
-  background-color: #fff;
-  border-bottom: 1px solid #000;
+  background-color: #f9f3f1;
+  border-bottom: 1px solid #184c5f;
 }
 
 .nav-mobile .nav-bar .logo {
   font-size: 2em;
-  color: #000;
 }
 
 .nav-mobile .nav-links {
@@ -484,7 +491,7 @@ h1 {
   z-index: 11;
   width: 100vw;
   height: 100vh;
-  background: #fff;
+  background: #f9f3f1;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 40px 20px;
@@ -519,7 +526,7 @@ h1 {
 }
 
 .nav-mobile .nav-links .inner a {
-  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 2px solid rgba(220, 79, 15, 0.2);
   padding-bottom: 2px;
   padding-top: 4px;
   -webkit-transition-duration: .3s;
@@ -530,7 +537,7 @@ h1 {
 }
 
 .nav-mobile .nav-links .inner .b {
-  color: #000;
+  color: #dc4f0f;
   margin-top: 1em;
   margin-bottom: .5em;
   -webkit-transition-duration: .3s;
@@ -549,7 +556,7 @@ h1 {
 }
 
 .nav-mobile .nav-links .inner .get-started {
-  color: #000;
+  color: #dc4f0f;
 }
 
 .nav-mobile #menu-checkbox:checked ~ .nav-links {
@@ -678,7 +685,7 @@ h1 {
   height: 100%;
   -webkit-transition: background-color .3s;
   transition: background-color .3s;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.25);
 }
 
 #scrollbar #thumb:hover {
@@ -739,7 +746,7 @@ h1 {
     z-index: 9;
     width: 100%;
     height: 60px;
-    background-color: #fff;
+    background-color: #f9f3f1;
     -webkit-transition: top .3s;
     transition: top .3s;
     opacity: 1;
