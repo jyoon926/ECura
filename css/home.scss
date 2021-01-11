@@ -25,24 +25,182 @@
         z-index: -1;
         width: calc(100vw + 160px);
         height: calc(100vh + 90px);
-        background-image: url('../img/Gradients/home.svg');
-        background-size: cover;
-        background-position: center;
-        filter: opacity(0.4);
+        //background: radial-gradient(circle at bottom, $accent-1 -100%, $light 80%);
+        filter: opacity(1);
     }
 }
 
-.section {
+.section1 {
     width: 100%;
     box-sizing: border-box;
     padding: 160px 40px 160px 40px;
     display: flex;
     flex-direction: column;
-    gap: 40px;
-    background-color: $dark;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    .swipe {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .inside {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+    }
+    h1, h2, h3 {
+        color: $light !important;
+        text-align: center;
+    }
+    .swipe-small {
+        height: 4vw;
+        overflow-y: hidden;
+        //margin-bottom: 1em;
+        h3 {
+            font-size: 2.5vw !important;
+            height: 4vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .inside {
+            animation: swipe-small 14s cubic-bezier(.76,.02,.29,.99) infinite;
+        }
+    }
+    .swipe-big {
+        height: 8vw;
+        overflow-y: hidden;
+        h1 {
+            font-size: 6vw !important;
+            height: 8vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .inside {
+            animation: swipe-big 14s cubic-bezier(.76,.02,.29,.99) infinite;
+        }
+    }
+    @keyframes swipe-small {
+        0% {
+            top: 0;
+            opacity: 1;
+        }
+        17% {
+            top: 0;
+            opacity: 1;
+        }
+        33% {
+            top: -4vw;
+            opacity: 1;
+        }
+        50% {
+            top: -4vw;
+            opacity: 1;
+        }
+        67% {
+            top: -8vw;
+            opacity: 1;
+        }
+        83% {
+            top: -8vw;
+            opacity: 1;
+        }
+        89% {
+            top: -8vw;
+            opacity: 0;
+        }
+        94% {
+            top: 0;
+            opacity: 0;
+        }
+        100% {
+            top: 0;
+            opacity: 1;
+        }
+    }
+    @keyframes swipe-big {
+        0% {
+            top: 0;
+            opacity: 1;
+        }
+        17% {
+            top: -8vw;
+            opacity: 1;
+        }
+        33% {
+            top: -16vw;
+            opacity: 1;
+        }
+        50% {
+            top: -24vw;
+            opacity: 1;
+        }
+        67% {
+            top: -32vw;
+            opacity: 1;
+        }
+        83% {
+            top: -40vw;
+            opacity: 1;
+        }
+        89% {
+            top: -40vw;
+            opacity: 0;
+        }
+        94% {
+            top: 0;
+            opacity: 0;
+        }
+        100% {
+            top: 0;
+            opacity: 1;
+        }
+    }
     img {
         width: 100%;
         filter: saturate(0);
+    }
+    .background {
+        position: absolute;
+        height: 100px;
+        width: 100px;
+        background-color: $dark;
+        //background: radial-gradient(circle at bottom, $accent-1 -200%, $dark 50%);
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p {
+            color: $light !important;
+            font-size: 18vw;
+            opacity: 0.075;
+            font-weight: bold;
+        }
+    }
+}
+
+.section2 {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 160px 40px 160px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    background: $accent-2;
+    h2 {
+        text-align: center;
+        max-width: 1200px;
     }
 }
 
@@ -55,9 +213,8 @@
             padding: 60px 20px;
         }
     }
-    .section {
+    .section1 {
         padding: 60px 20px 80px 20px;
-        gap: 20px;
     }
 
 }
